@@ -53,11 +53,13 @@ If you get the message below, go to the [solutions tab](#disable-the-unmovable-f
 - 100GB is 10240MB
 
 ## Successful USB Boot
+
+If you already know how to boot into a USB you can **[Skip](##Install)** past this section.
+
 1. [Fast Boot](#disabling-fast-boot)
 2. [Secure Boot](#disabling-secure-boot)
 3. [Boot Priority](#boot-priority)
 
-If you already know how to boot into a USB you can **[Skip](##Install)** past this section.
 
 ### Disabling Fast Boot
 Before you restart, you must disable **Fast Boot**.
@@ -128,22 +130,14 @@ Restart your computer and remove the USB drive. Your computer should boot into [
 ### Disable System protection:
 Press <kbd>⊞ Win</kbd>+<kbd>R</kbd> < enter `SystemProperitiesProtecion.exe` < press <kbd>Enter</kbd> < click `C: drive` < click `Configure` < select `Disable system protection` < click `Apply` < click `Yes` < restart.
 
-##
-
 ### Disable Hibernation:
 Click <kbd>⊞ Win</kbd> < type `CMD` in the Search box< right click `cmd`< choose `Run as administrator` < enter `powercfg.exe` /hibernate off”< press <kbd>Enter</kbd> < restart.
-
-##
 
 ### Disable Page files: 
 Press <kbd>⊞ Win</kbd>+<kbd>R</kbd> < type `SystemPropertiesPerformance.exe` < Press <kbd>Enter</kbd> < click `Advanced` < click `Change under Virtual Memory` < uncheck `Automatically manage paging file size for all drives` < click `C: drive` < set paging file size to `No paging file` < click `Set` < click `OK` < restart.
 
-##
-
 ### Disable the kernel memory dump:
 Click <kbd>⊞ Win</kbd>< select `Control Panel` < click `System and Security` < click `System` < click `Advanced system settings` < click `settings` under `Startup and Recovery` < Change the drop down menu under Write debugging information to `None`.
-
-##
 
 ### IMPORTANT! Do not forget to re-enable these unmovable files after changing partition size of C: drive.
 
