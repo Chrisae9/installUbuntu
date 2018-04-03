@@ -5,12 +5,12 @@
 
 # Overview
 
-1. [Pre-Installation](##Pre-Installation)
-2. [Download](##Download)
-3. [Make Room](##Make-Room)
-4. [Successful USB Boot](##Successful-USB-Boot)
-5. [Install](##Install)
-6. [Boot Ubuntu](##Boot-Ubuntu)
+1. [Pre-Installation](#pre-installation)
+2. [Download](#download)
+3. [Make Room](#make-room)
+4. [Successful USB Boot](#successful-usb-boot)
+5. [Install](#install)
+6. [Boot Ubuntu](#boot-ubuntu)
 
 ## Pre-Installation
 Before starting, make sure that you have the following:
@@ -18,17 +18,13 @@ Before starting, make sure that you have the following:
 - A Backup of Windows and all your files.
 - A seperate USB stick **2GB** or more.
 
-##
-
 ## Download
-Download the files on this **[Page](linktodownload)** or follow these links:
+Download the files on this **[Page](https://github.com/Chrisae9/installUbuntu/archive/master.zip)** or follow these links:
 
 ### **[Rufus](https://rufus.akeo.ie/)** and **[Ubuntu](https://www.ubuntu.com/download/desktop)**.
 Start Rufus as Administrator select the Ubuntu.iso file.
 
 ![Rufus](pictures/rufus.png)
-
-##
 
 ## Make Room
 There are multiple ways to open *Disk Partition* on Windows:
@@ -41,7 +37,7 @@ Installing on the same drive as windows is perfectly normal. In this case, **Rig
 ![Shrink Volume](pictures/disk1.png)
 
 ### Important!
-If you get the message below, go to the [solutions tab](##Cannot-shrink-volume).
+If you get the message below, go to the [solutions tab](#disable-the-unmovable-files).
 
 ![Shrink Volume error](pictures/disk3.png)
 
@@ -56,12 +52,10 @@ If you get the message below, go to the [solutions tab](##Cannot-shrink-volume).
 - 64GB is 65536MB
 - 100GB is 10240MB
 
-##
-
 ## Successful USB Boot
-1. [Fast Boot](###Disabling-Fast-Boot)
-2. [Secure Boot](###Disabling-Secure-Boot)
-3. [Boot Priority](###Boot-Priority)
+1. [Fast Boot](#disabling-fast-boot)
+2. [Secure Boot](#disabling-secure-boot)
+3. [Boot Priority](#boot-priority)
 
 If you already know how to boot into a USB you can **[Skip](##Install)** past this section.
 
@@ -92,8 +86,6 @@ Before you leave that menu. Find the **Boot tab** and move **Removable Devices**
 
 **MAKE SURE TO SAVE CHANGES ON EXIT!!!**
 
-##
-
 ## Install
 Plug in the USB if you haven't done so already, and start your computer.
 
@@ -105,7 +97,7 @@ Plug in the USB if you haven't done so already, and start your computer.
 
 ![update](pictures/update.png)
 
-### Next, **Choose** "Install Ubuntu alongside Windows" *If there is no option go to this [solution](##Something-else-option).*
+### Next, **Choose** "Install Ubuntu alongside Windows" *If there is no option go to this [solution](#something-else-option).*
 
 ![Dual Boot](pictures/dualboot.png)
 
@@ -129,11 +121,33 @@ Restart your computer and remove the USB drive. Your computer should boot into [
 
 # Solutions
 
-## Cannot shrink volume
+## Disable the unmovable files
 
-![solution](https://www.easeus.com/partition-manager-software/windows-cant-shrink-volume-partition.html)
+>The answer is as same as the Disk Management message shows that the shrink space of C: drive is limited by unmovable files such as Hibernation, Page files and system protections. These files can’t be moved automatically by Windows built-in tool Disk Management, so you’ll need to manually disable the unmovable files.
+
+### Disable System protection:
+Press <kbd>⊞ Win</kbd>+<kbd>R</kbd> < enter `SystemProperitiesProtecion.exe` < press <kbd>Enter</kbd> < click `C: drive` < click `Configure` < select `Disable system protection` < click `Apply` < click `Yes` < restart.
 
 ##
+
+### Disable Hibernation:
+Click <kbd>⊞ Win</kbd> < type `CMD` in the Search box< right click `cmd`< choose `Run as administrator` < enter `powercfg.exe` /hibernate off”< press <kbd>Enter</kbd> < restart.
+
+##
+
+### Disable Page files: 
+Press <kbd>⊞ Win</kbd>+<kbd>R</kbd> < type `SystemPropertiesPerformance.exe` < Press <kbd>Enter</kbd> < click `Advanced` < click `Change under Virtual Memory` < uncheck `Automatically manage paging file size for all drives` < click `C: drive` < set paging file size to `No paging file` < click `Set` < click `OK` < restart.
+
+##
+
+### Disable the kernel memory dump:
+Click <kbd>⊞ Win</kbd>< select `Control Panel` < click `System and Security` < click `System` < click `Advanced system settings` < click `settings` under `Startup and Recovery` < Change the drop down menu under Write debugging information to `None`.
+
+##
+
+### IMPORTANT! Do not forget to re-enable these unmovable files after changing partition size of C: drive.
+
+You can run [Disk Cleanup](https://www.disk-partition.com/articles/disk-cleanup-windows-10-4125.html) on the disk and [Disk Defragment](https://www.disk-partition.com/lib/how-to-defragment.html) for HDD to get more free space on C: drive.
 
 ## Something else option
 
@@ -157,5 +171,4 @@ Go ahead and **Click** the "Something Else" option.
 ![Root](pictures/mount.png)
 
 ##
-
 
